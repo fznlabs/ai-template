@@ -4,6 +4,10 @@ from logic import add_numbers
 
 app = FastAPI()
 
+@app.get("/")
+def health_check():
+    return {"status": "online", "message": "The Gatekeeper is active"}
+
 class CalculationInput(BaseModel):
     num_1: int
     num_2: int
